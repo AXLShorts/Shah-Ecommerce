@@ -37,12 +37,12 @@ const Navbar = () => {
             Home
           </Button>
         </Link>
-        <Link href="/">
+        <Link href="/aboutus">
           <Button variant="link" className="text-base px-2 xl:px-4">
             About Us
           </Button>
         </Link>
-        <Link href="/">
+        <Link href="/contactus">
           <Button variant="link" className="text-base px-2 xl:px-4">
             Contact
           </Button>
@@ -57,7 +57,7 @@ const Navbar = () => {
             Refund Policy
           </Button>
         </Link>
-        <Link href="/">
+        <Link href="/termsandconditions">
           <Button variant="link" className="text-base px-2 xl:px-4">
             Terms & Conditions
           </Button>
