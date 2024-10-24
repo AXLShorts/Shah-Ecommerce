@@ -47,12 +47,12 @@ const Navbar = () => {
             Contact
           </Button>
         </Link>
-        <Link href="/">
+        <Link href="/privacypolicy">
           <Button variant="link" className="text-base px-2 xl:px-4">
             Privacy Policy
           </Button>
         </Link>
-        <Link href="/">
+        <Link href="/refundpolicy">
           <Button variant="link" className="text-base px-2 xl:px-4">
             Refund Policy
           </Button>
@@ -71,12 +71,42 @@ const Navbar = () => {
           <SheetContent side={"right"}>
             <SheetHeader className="pt-6">
               <SheetTitle className="hidden">Menu</SheetTitle>
-              <Button variant="default">Home</Button>
-              <Button variant="default">About Us</Button>
-              <Button variant="default">Contact</Button>
-              <Button variant="default">Privacy Policy</Button>
-              <Button variant="default">Refund Policy</Button>
-              <Button variant="default">Terms & Conditions</Button>
+              <Link
+                href="/"
+                className="block py-2 text-lg font-bold text-[#18571b]"
+              >
+                <Button className="w-full">Home</Button>
+              </Link>
+              <Link
+                href="/aboutus"
+                className="block py-2 text-lg font-bold text-[#18571b]"
+              >
+                <Button className="w-full">About Us</Button>
+              </Link>
+              <Link
+                href="/contactus"
+                className="block py-2 text-lg font-bold text-[#18571b]"
+              >
+                <Button className="w-full">Contact</Button>
+              </Link>
+              <Link
+                href="/privacypolicy"
+                className="block py-2 text-lg font-bold text-[#18571b]"
+              >
+                <Button className="w-full">Privacy Policy</Button>
+              </Link>
+              <Link
+                href="/refundpolicy"
+                className="block py-2 text-lg font-bold text-[#18571b]"
+              >
+                <Button className="w-full">Refund Policy</Button>
+              </Link>
+              <Link
+                href="/termsandconditions"
+                className="block py-2 text-lg font-bold text-[#18571b]"
+              >
+                <Button className="w-full">Terms & Conditions</Button>
+              </Link>
             </SheetHeader>
           </SheetContent>
         </Sheet>

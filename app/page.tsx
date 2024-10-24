@@ -10,6 +10,7 @@ import {
 import Image from "next/image";
 
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const products = [
   {
@@ -156,12 +157,14 @@ export default function Home() {
               </CardDescription>
             </CardContent>
             <CardFooter className="mt-auto p-4 pt-0">
-              <Button
-                className="w-full text-white bg-[#31a08a]"
-                variant="default"
-              >
-                Book Now
-              </Button>
+              <Link href={`/checkout/${product.id}`}>
+                <Button
+                  className="w-full text-white bg-[#31a08a]"
+                  variant="default"
+                >
+                  Book Now
+                </Button>
+              </Link>
             </CardFooter>
           </Card>
         ))}
