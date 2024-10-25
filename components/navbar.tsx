@@ -31,10 +31,15 @@ const Navbar = () => {
           </h1>
         </Link>
       </div>
-      <div className="lg:flex gap-2 xl:gap-4 w-1/2 items-center justify-end hidden">
+      <div className="lg:flex gap-1.5 xl:gap-4 w-1/2 items-center justify-end hidden">
         <Link href="/">
           <Button variant="link" className="text-base px-2 xl:px-4">
             Home
+          </Button>
+        </Link>
+        <Link href="/services">
+          <Button variant="link" className="text-base px-2 xl:px-4">
+            Services
           </Button>
         </Link>
         <Link href="/aboutus">
@@ -76,6 +81,12 @@ const Navbar = () => {
                 className="block py-2 text-lg font-bold text-[#18571b]"
               >
                 <Button className="w-full">Home</Button>
+              </Link>
+              <Link
+                href="/services"
+                className="block py-2 text-lg font-bold text-[#18571b]"
+              >
+                <Button className="w-full">Services</Button>
               </Link>
               <Link
                 href="/aboutus"
