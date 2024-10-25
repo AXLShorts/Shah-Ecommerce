@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Card,
   CardContent,
@@ -12,7 +14,17 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
-const products = [
+import useCartStore from "@/store/useCartStore";
+
+type Product = {
+  id: number;
+  img: string;
+  title: string;
+  price: number | string;
+  description: string;
+};
+
+const products: Product[] = [
   {
     id: 1,
     img: "https://picsum.photos/400/200",
@@ -128,6 +140,7 @@ const products = [
 ];
 
 export default function Home() {
+  const { addToCart, cart, removeFromCart } = useCartStore();
   return (
     <div className="p-4 py-0 md:py-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
@@ -157,9 +170,26 @@ export default function Home() {
               </CardDescription>
             </CardContent>
             <CardFooter className="mt-auto p-4 pt-0 w-full grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <Button variant="outline" className="w-full">
-                Add To Cart
+              <Button
+                variant={
+                  cart.some((item: Product) => item.id === product.id)
+                    ? "destructive"
+                    : "outline"
+                }
+                className="w-full"
+                onClick={() => {
+                  if (cart.some((item: Product) => item.id === product.id)) {
+                    removeFromCart(product.id);
+                  } else {
+                    addToCart(product);
+                  }
+                }}
+              >
+                {cart.some((item: Product) => item.id === product.id)
+                  ? "Remove from Cart"
+                  : "Add to Cart"}
               </Button>
+
               <Link href={`/checkout/${product.id}`} className="w-full">
                 <Button
                   className="w-full text-white bg-[#31a08a]"

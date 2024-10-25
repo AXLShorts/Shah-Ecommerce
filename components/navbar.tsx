@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { Button } from "./ui/button";
 
@@ -9,12 +11,15 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 
-import { Menu } from "lucide-react";
+import { Menu, ShoppingCart } from "lucide-react";
 
 import Link from "next/link";
 import Image from "next/image";
 
+import useCartStore from "@/store/useCartStore";
+
 const Navbar = () => {
+  const { cart } = useCartStore();
   return (
     <div className="w-full h-[80px] flex justify-between items-center text-nowrap px-4">
       <div>
@@ -67,12 +72,32 @@ const Navbar = () => {
             Terms & Conditions
           </Button>
         </Link>
+        <Link
+          className="relative size-10 flex justify-center items-center"
+          href="/cart"
+        >
+          <ShoppingCart size={20} />
+          <span className="absolute bottom-0 -right-2 rounded-full bg-black size-4 text-white flex justify-center items-center text-xs">
+            {cart.length}
+          </span>
+        </Link>
       </div>
       <div className="flex lg:hidden">
         <Sheet>
-          <SheetTrigger className="p-1 border rounded-md">
-            <Menu size={24} />
-          </SheetTrigger>
+          <div className="flex gap-4 items-center">
+            <Link
+              className="relative size-10 flex justify-center items-center"
+              href="/cart"
+            >
+              <ShoppingCart size={24} />
+              <span className="absolute bottom-0 -right-1 rounded-full bg-black size-4 text-white flex justify-center items-center text-xs">
+                {cart.length}
+              </span>
+            </Link>
+            <SheetTrigger className="p-1 border rounded-md">
+              <Menu size={24} />
+            </SheetTrigger>
+          </div>
           <SheetContent side={"right"}>
             <SheetHeader className="pt-6">
               <SheetTitle className="hidden">Menu</SheetTitle>
