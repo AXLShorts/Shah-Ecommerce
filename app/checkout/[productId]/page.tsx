@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import React, { useEffect, useState } from "react";
@@ -179,10 +180,38 @@ const Page = ({ params }: PageProps) => {
                 <div className="flex items-center space-x-2">
                   <RadioGroupItem value="visa" id="visa" />
                   <Label htmlFor="visa">Visa</Label>
+                  <img
+                    src="/assets/checkout/visa.png"
+                    alt="Visa Credit Card"
+                    className="w-8 h-auto"
+                  />
                 </div>
                 <div className="flex items-center space-x-2">
                   <RadioGroupItem value="mastercard" id="mastercard" />
                   <Label htmlFor="mastercard">Mastercard</Label>
+                  <img
+                    src="/assets/checkout/mastercard.png"
+                    alt="Mastercard Credit Card"
+                    className="w-8 h-auto"
+                  />
+                </div>
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="american" id="american" />
+                  <Label htmlFor="american">American Express</Label>
+                  <img
+                    src="/assets/checkout/american.png"
+                    alt="American Express Credit Card"
+                    className="w-8 h-auto"
+                  />
+                </div>
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="discover" id="discover" />
+                  <Label htmlFor="discover">Discover</Label>
+                  <img
+                    src="/assets/checkout/discover.png"
+                    alt="Discover Credit Card"
+                    className="w-8 h-auto"
+                  />
                 </div>
               </RadioGroup>
             </div>

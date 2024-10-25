@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -19,21 +20,27 @@ export default function Home() {
           </span>
         </h2>
       </div>
-      <h2 className="text-center">Powering a Greener Tomorrow</h2>
-      <p className="text-center">
+      <h2 className="text-center text-xl sm:text-3xl md:text-4xl lg:text-5xl">
+        Powering a Greener Tomorrow
+      </h2>
+      <p className="text-center text-base sm:text-lg">
         Our mission is to make the world a greener and more energy-efficient
         place. We are committed to helping consumers save money on energy, and
         we pride ourselves on being fast, friendly, efficient, and trustworthy.
       </p>
-      <Button className="w-fit mx-auto">More About Us</Button>
-      <h2 className="text-center">Empowering You to Save Energy and Money</h2>
-      <p className="max-w-[650px] mx-auto text-center">
+      <Link href="/aboutus" className="w-fit mx-auto">
+        <Button className="w-fit mx-auto">More About Us</Button>
+      </Link>
+      <h2 className="text-center text-xl sm:text-3xl md:text-4xl lg:text-5xl">
+        Empowering You to Save Energy and Money
+      </h2>
+      <p className="max-w-[650px] mx-auto text-center text-base sm:text-lg">
         At NA Energy Solutions, we offer a wide range of unique energy solutions
         to clients across North America. Our services are designed to help you
         save on energy costs, and we provide consultations and installations for
         a variety of energy-efficient systems. Our services include:
       </p>
-      <ul className="max-w-[650px] mx-auto list-disc">
+      <ul className="max-w-[650px] mx-auto list-disc text-base sm:text-lg">
         <li>
           <strong>Solar Panel Installation and Consultation:</strong>&nbsp;We
           provide expert installation of solar panels, helping you harness the
