@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
-"use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 import Image from "next/image";
 import { CreditCard } from "lucide-react";
@@ -137,23 +136,20 @@ const products = [
   },
 ];
 
-const Page = ({ params }: PageProps) => {
-  const [productId, setProductId] = useState<string | null>(null);
+export async function generateStaticParams() {
+  return products.map((product) => ({ productId: product.id.toString() }));
+}
 
-  useEffect(() => {
-    const fetchParams = async () => {
-      const resolvedParams = await params;
-      setProductId(resolvedParams.productId);
-    };
-    fetchParams();
-  }, [params]);
+const Page = async ({ params }: PageProps) => {
+  const productId = (await params)?.productId;
 
-  if (!productId) {
-    return <div>Loading...</div>;
-  }
   const product = products.find(
     (product) => product.id === parseInt(productId)
   );
+
+  if (!product) {
+    return <div>Product not found</div>;
+  }
   return (
     <div className="container mx-auto p-4">
       <div className="grid md:grid-cols-2 gap-6">
